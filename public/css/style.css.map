@@ -1,0 +1,25 @@
+{
+    "version": 3,
+    "mappings": "AMAA,UAAU;EACN,WAAW,EAAE,QAAQ;EACrB,GAAG,EAAE,gDAAgD;EACrD,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,MAAM;;;AAGtB,UAAU;EACN,WAAW,EAAE,WAAW;EACxB,GAAG,EAAE,+CAA+C;EACpD,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,MAAM",
+    "sources": [
+        "style.scss",
+        "utils/_variables.scss",
+        "utils/_functions.scss",
+        "utils/_mixins.scss",
+        "utils/_extensions.scss",
+        "base/_base.scss",
+        "base/_typography.scss",
+        "components/_buttons.scss",
+        "layout/_header.scss",
+        "layout/_nav.scss",
+        "layout/_container.scss",
+        "layout/_form.scss",
+        "pages/_accueil.scss",
+        "pages/_delice.scss",
+        "pages/_francaise.scss",
+        "pages/_note.scss",
+        "pages/_palette.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
