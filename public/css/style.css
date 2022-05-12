@@ -1,15 +1,79 @@
-@font-face {
-  font-family: 'roboto';
-  src: url("../public/fonts/roboto/Roboto-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
+h1 {
+  font-family: shrikhand;
+}
+
+h2, p, input {
+  font-family: roboto, sans-serif;
 }
 
 @font-face {
-  font-family: 'shrikhand';
+  font-family: "roboto";
+  src: url("../fonts/roboto/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "shrikhand";
   src: url("../fonts/shrikhand/Shrikhand-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
-/*# sourceMappingURL=style.css.map */
+.block-btn__btn {
+  margin: 20px 0px 50px 0px;
+  background-color: #FF79DA;
+  color: white;
+  border-radius: 25px;
+  padding: 16px 20px 16px 20px;
+  box-shadow: inset -8px -10px 48px 10px rgba(147, 86, 220, 0.6);
+  font-weight: bold;
+  border: 3px #EAEAEA;
+}
+.block-btn__btn:hover {
+  cursor: pointer;
+}
 
+.logo {
+  text-align: center;
+  font-size: 30px;
+  padding: 0px;
+}
+
+.block-loc {
+  box-shadow: 0px 90px 9px -87px rgba(0, 0, 0, 0.18) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAEA;
+}
+.block-loc__icon {
+  margin-right: 15px;
+}
+
+.block-btn-loc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F6F6F6;
+}
+.block-btn-loc__titre {
+  text-align: center;
+  margin: 0px;
+  font-size: 23px;
+  padding: 28px 70px 10px 70px;
+  font-weight: bold;
+}
+.block-btn-loc__texte {
+  color: rgba(56, 56, 56, 0.662745098);
+  text-align: center;
+  padding: 0px 30px 5px 30px;
+}
+
+.block-loc__recherche {
+  width: 110px;
+  margin: 15px 0px 15px 0px;
+  text-align: center;
+  border: none;
+  background-color: #EAEAEA;
+}
+
+/*# sourceMappingURL=style.css.map */

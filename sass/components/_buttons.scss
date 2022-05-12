@@ -1,0 +1,18 @@
+.block-btn{
+        &__btn{
+        margin: 20px 0px 50px 0px;
+        background-color: $segondaire;
+        color: $blanc;
+        border-radius: 25px;
+        padding: 16px 20px 16px 20px;
+        box-shadow: inset -8px -10px 48px 10px rgba(147,86,220,0.60);
+        font-weight: bold;
+        border: 3px $gris_fonce;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    
+   
+}
