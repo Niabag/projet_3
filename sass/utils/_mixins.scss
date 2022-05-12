@@ -1,0 +1,15 @@
+@mixin fonctionnement-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 60px;
+    border-radius: 20px;
+    background: $gris_claire;
+    box-shadow: 0px 7px 15px -4px rgba(0, 0, 0, 0.30);
+}
+
+@mixin fonctionnement-icon {
+    color: $gris-texte;
+    margin-right: 15px;
+}
