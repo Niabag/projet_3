@@ -121,6 +121,12 @@ h2, p, input {
   border-radius: 25px;
   color: white;
 }
+.block-fonctionnement__texte-1 {
+  margin-right: 20px;
+}
+.block-fonctionnement__texte-2 {
+  margin-right: 15px;
+}
 .block-fonctionnement__icon {
   color: rgba(56, 56, 56, 0.662745098);
   margin-right: 15px;
