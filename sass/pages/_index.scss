@@ -1,0 +1,45 @@
+.section-fonctionnement{
+    display: flex;
+    flex-direction: column;
+
+    &__titre{
+        margin-left: 30px;
+    }
+}
+
+.block-fonctionnement{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+
+    &__card{
+        @include fonctionnement-card;
+    }
+
+    &__card-rose{
+        @include fonctionnement-card;
+        background: $rose_pale;
+    }
+
+    &__num{
+        display: flex;
+        justify-content: center;
+        width: 20px;
+        position: absolute;
+        margin-right: 280px;
+        background: $primaire;
+        border-radius: 25px;
+        color: $blanc;
+    }
+
+    &__icon{
+        @include fonctionnement-icon;
+    }
+
+    &__icon-violet{
+        @include fonctionnement-icon;
+        color: $primaire;
+    }
+}
