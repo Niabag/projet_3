@@ -13,3 +13,7 @@
     color: $gris-texte;
     margin-right: 15px;
 }
+
+@mixin footer-icon {
+    color: white;
+}
