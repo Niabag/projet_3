@@ -1,6 +1,12 @@
 .section-footer{
     background: $footer;
 
+    @include desktop-version{
+        display: flex; 
+        align-items: center;
+        flex-direction: column;
+    }
+
     &__logo{
         font-family: shrikhand;
         color: $blanc;
@@ -8,6 +14,10 @@
         font-size: 25px;
         margin: 0px 0px 0px 20px;
         padding-top: 20px;
+
+        @include desktop-version{
+            font-size: 30px;
+        }
     }
 }
 
