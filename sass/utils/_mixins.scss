@@ -24,3 +24,9 @@
         @content;
     } 
 }
+
+@mixin tablette-version {
+    @media screen and (min-width: map-get($breakpoints-tablette, tablette)){
+        @content;
+    } 
+}
