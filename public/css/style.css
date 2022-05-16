@@ -116,6 +116,13 @@ h2, p, input {
     flex-direction: column;
   }
 }
+@media screen and (min-width: 768px) {
+  .section-footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .section-footer__logo {
   font-family: shrikhand;
   color: white;

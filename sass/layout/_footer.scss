@@ -7,6 +7,12 @@
         flex-direction: column;
     }
 
+    @include tablette-version{
+        display: flex; 
+        align-items: center;
+        flex-direction: column;
+    }
+
     &__logo{
         font-family: shrikhand;
         color: $blanc;
