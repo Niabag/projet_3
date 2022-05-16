@@ -17,3 +17,10 @@
 @mixin footer-icon {
     color: white;
 }
+
+
+@mixin desktop-version {
+    @media screen and (min-width: map-get($breakpoints-desktop, desktop)){
+        @content;
+    } 
+}
