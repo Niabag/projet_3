@@ -1,3 +1,37 @@
+/*CHhargement*/
+
+.chargement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;  
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 999;
+        animation: chargement 3000ms forwards ease;
+    }      
+    &__titre {  
+        margin-top: 700px;
+        position: absolute; 
+        z-index: 999;
+        font-size: 50px;               
+        animation:  texte-chargement 3000ms ease both;
+    }
+    &__icon {
+        position: absolute;
+        top: 55%;
+        z-index: 999;
+        font-size: 50px;        
+        animation:  gauche-droite 3000ms ease both;
+    }  
+}
+
 /*Main*/
 
 main{
@@ -37,14 +71,10 @@ main{
         margin-top: 20px;
     }
 
-    &__card{
-        @include fonctionnement-card;
+    &__icon{
+        @include fonctionnement-icon;
     }
 
-    &__card-rose{
-        @include fonctionnement-card;
-        background: $rose_pale;
-    }
 
     &__num{
         display: flex;
@@ -57,21 +87,24 @@ main{
         color: $blanc;
     }
 
-    &__texte-1{
+    &__texte-composez{
         margin-right: 20px;
     }
 
-    &__texte-2{
+    &__texte-degustez{
         margin-right: 15px;
-    }
+    }  
+}
 
-    &__icon{
-        @include fonctionnement-icon;
-    }
-
-    &__icon-violet{
-        @include fonctionnement-icon;
-        color: $primaire;
+.block-fonctionnement__card{
+    cursor: pointer;
+    border: none;
+    @include fonctionnement-card;
+    &:hover{
+        animation: active_card 300ms forwards;
+        .block-fonctionnement__icon{
+            animation: active_icon 1000ms forwards;
+        }
     }
 }
 
@@ -140,6 +173,7 @@ main{
             margin: 20px 0px 0px 240px;
             color: $menthe_texte;
             font-weight: bold;
+            animation: nouveau 2000ms forwards infinite;
         }
 
         &--img{
