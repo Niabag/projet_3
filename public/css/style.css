@@ -1,9 +1,93 @@
+/*Coeur*/
 @keyframes coeur-plein {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+/*Nouveau menu*/
+@keyframes nouveau {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+/*Bouton header*/
+@keyframes explorer {
+  0% {
+    box-shadow: inset -8px -10px 48px 10px rgba(146, 86, 220, 0.356), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+  }
+  100% {
+    box-shadow: inset -8px -10px 48px 10px rgba(146, 86, 220, 0.452), 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
+  }
+}
+/*Fonctionnement*/
+@keyframes active_card {
+  0% {
+    background: white;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+  }
+  100% {
+    background: #f2eafb;
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
+  }
+}
+@keyframes active_icon {
+  0% {
+    color: #F6F6F6;
+  }
+  100% {
+    color: rgb(147, 86, 220);
+  }
+}
+/* Chargement*/
+@keyframes texte-chargement {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes chargement {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes gauche-droite {
+  0% {
+    opacity: 0;
+    transform: translateX(-283%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(190%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-283%);
   }
 }
 h1 {
@@ -38,6 +122,7 @@ h2, p, input {
 }
 .block-btn__btn:hover {
   cursor: pointer;
+  animation: explorer 300ms forwards;
 }
 
 /*Bouton coeur*/
@@ -85,14 +170,14 @@ h2, p, input {
   align-items: center;
   background-color: #F6F6F6;
 }
-.block-btn-loc__titre {
+.block-btn-loc__h2 {
   text-align: center;
   margin: 0px;
   font-size: 23px;
   padding: 28px 70px 10px 70px;
   font-weight: bold;
 }
-.block-btn-loc__texte {
+.block-btn-loc__text-prensentation {
   color: rgba(56, 56, 56, 0.662745098);
   text-align: center;
   padding: 0px 30px 5px 30px;
@@ -139,12 +224,11 @@ h2, p, input {
 
 .footer-ul {
   list-style-type: none;
-  padding-left: 20px;
   margin: 0px;
   padding: 20px 0px 20px 20px;
 }
 .footer-ul__li {
-  margin-bottom: 8px;
+  padding-top: 10px;
 }
 .footer-ul__li--a {
   text-decoration: none;
@@ -157,6 +241,39 @@ h2, p, input {
 }
 .footer-ul__li--icon2 {
   color: white;
+}
+
+/*CHhargement*/
+.chargement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.chargement::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 999;
+  animation: chargement 3000ms forwards ease;
+}
+.chargement__titre {
+  margin-top: 700px;
+  position: absolute;
+  z-index: 999;
+  font-size: 50px;
+  animation: texte-chargement 3000ms ease both;
+}
+.chargement__icon {
+  position: absolute;
+  top: 55%;
+  z-index: 999;
+  font-size: 50px;
+  animation: gauche-droite 3000ms ease both;
 }
 
 /*Main*/
@@ -198,26 +315,9 @@ h2, p, input {
     margin-top: 20px;
   }
 }
-.block-fonctionnement__card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 280px;
-  height: 60px;
-  border-radius: 20px;
-  background: #F6F6F6;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
-}
-.block-fonctionnement__card-rose {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 280px;
-  height: 60px;
-  border-radius: 20px;
-  background: #F6F6F6;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
-  background: #F5EDFF;
+.block-fonctionnement__icon {
+  color: rgba(56, 56, 56, 0.662745098);
+  margin-right: 15px;
 }
 .block-fonctionnement__num {
   display: flex;
@@ -229,20 +329,30 @@ h2, p, input {
   border-radius: 25px;
   color: white;
 }
-.block-fonctionnement__texte-1 {
+.block-fonctionnement__texte-composez {
   margin-right: 20px;
 }
-.block-fonctionnement__texte-2 {
+.block-fonctionnement__texte-degustez {
   margin-right: 15px;
 }
-.block-fonctionnement__icon {
-  color: rgba(56, 56, 56, 0.662745098);
-  margin-right: 15px;
+
+.block-fonctionnement__card {
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 60px;
+  border-radius: 20px;
+  background: #F6F6F6;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
 }
-.block-fonctionnement__icon-violet {
-  color: rgba(56, 56, 56, 0.662745098);
-  margin-right: 15px;
-  color: rgb(147, 86, 220);
+.block-fonctionnement__card:hover {
+  animation: active_card 300ms forwards;
+}
+.block-fonctionnement__card:hover .block-fonctionnement__icon {
+  animation: active_icon 1000ms forwards;
 }
 
 /* Partie Restaurants*/
@@ -308,6 +418,7 @@ h2, p, input {
   margin: 20px 0px 0px 240px;
   color: #008766;
   font-weight: bold;
+  animation: nouveau 2000ms forwards infinite;
 }
 .card-restaurant__lien--img {
   width: 350px;
