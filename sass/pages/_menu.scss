@@ -1,0 +1,87 @@
+.section-menu {
+    display: flex;
+    flex-direction: column;
+    background: $gris_claire;
+    margin-top: -35px;
+    padding-top: 30px;
+    border-radius: 30px 30px 0px 0px;
+    position: relative;
+
+    &__titre-resto {
+        font-family: shrikhand;
+        margin: 0px 0px 10px 20px;
+    }
+}
+
+.section-entrees {
+    animation: deffilement 1500ms both 0ms;
+}
+.section-plats {
+    animation: deffilement 1500ms both 1500ms;
+}
+.section-desserts {
+    animation: deffilement 1500ms both 3000ms;
+}
+
+.section-entrees, .section-plats,.section-desserts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 10px;
+
+    &_titre {
+        color: $gris-texte;
+        margin-right: 280px;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+    &_card {               
+        width: 360px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: $blanc;
+        @include box-shadow;
+
+        &:hover {
+            animation: card-active 300ms forwards;
+            .section-entrees_card--icon,.section-plats_card--icon,.section-desserts_card--icon {
+                width: 25%;    
+            }
+            .fa-check-circle {
+                animation: rotatation 1000ms forwards;
+            }
+        }
+
+        .fa-check-circle {
+            font-size: 40px;
+            color: #fff; 
+        }
+
+        &--texte h4{
+            margin: 10px 0px 10px 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        &--texte p{
+            margin: 10px 0px 10px 20px;
+            color: $gris-texte;
+        }
+        
+        &--prix {
+            margin: 45px 0px 0px 130px;
+            font-weight: bold;
+        }
+
+        &--icon{
+            display: none;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            background: $tertiaire;
+        }
+    }
+}

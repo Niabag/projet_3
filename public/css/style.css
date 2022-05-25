@@ -20,7 +20,7 @@
   }
 }
 /*Bouton header*/
-@keyframes explorer {
+@keyframes active-btn {
   0% {
     box-shadow: inset -8px -10px 48px 10px rgba(146, 86, 220, 0.356), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
   }
@@ -90,6 +90,31 @@
     transform: translateX(-283%);
   }
 }
+/*card menu*/
+@keyframes card-active {
+  0% {
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+  }
+  100% {
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes deffilement {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 h1 {
   font-family: shrikhand;
 }
@@ -110,6 +135,7 @@ h2, p, input {
   font-weight: normal;
   font-style: normal;
 }
+/*Index*/
 /*Bouton header*/
 .block-btn__btn {
   margin: 20px 0px 50px 0px;
@@ -122,7 +148,7 @@ h2, p, input {
 }
 .block-btn__btn:hover {
   cursor: pointer;
-  animation: explorer 300ms forwards;
+  animation: active-btn 300ms forwards;
 }
 
 /*Bouton coeur*/
@@ -142,6 +168,45 @@ h2, p, input {
   color: rgb(147, 86, 220);
 }
 
+/*Menu*/
+/*Bouton coeur*/
+.section-menu__btn {
+  width: 30px;
+  position: absolute;
+  font-size: 30px;
+  border: none;
+  background-color: #F6F6F6;
+  cursor: pointer;
+  margin-left: 300px;
+}
+.section-menu__btn--coeur {
+  font-size: 25px;
+}
+.section-menu__btn .fas {
+  opacity: 0;
+}
+.section-menu__btn .fas:hover {
+  animation: coeur-plein 500ms forwards;
+  color: rgb(147, 86, 220);
+}
+
+/*Bouton Commander*/
+.btn {
+  width: 180px;
+  margin: 20px 0px 50px 0px;
+  background-color: #FF79DA;
+  color: white;
+  border-radius: 25px;
+  padding: 16px 20px 16px 20px;
+  box-shadow: inset -8px -10px 48px 10px rgba(147, 86, 220, 0.6), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+  border: 3px #EAEAEA;
+}
+.btn:hover {
+  cursor: pointer;
+  animation: active-btn 300ms forwards;
+}
+
+/*Header Index*/
 .logo {
   text-align: center;
   font-size: 30px;
@@ -170,7 +235,7 @@ h2, p, input {
   align-items: center;
   background-color: #F6F6F6;
 }
-.block-btn-loc__h2 {
+.block-btn-loc__titre {
   text-align: center;
   margin: 0px;
   font-size: 23px;
@@ -183,6 +248,29 @@ h2, p, input {
   padding: 0px 30px 5px 30px;
 }
 
+/*Header menu*/
+.section-header {
+  display: flex;
+  flex-direction: column;
+}
+.section-header__block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.section-header__block--fleche {
+  color: black;
+  font-size: 20px;
+}
+.section-header__block--logo {
+  font-size: 30px;
+  padding: 0px 60px 0px 60px;
+}
+.section-header__block--img {
+  z-index: -1;
+}
+
 .block-loc__recherche {
   width: 125px;
   margin: 15px 0px 15px 0px;
@@ -193,6 +281,7 @@ h2, p, input {
 
 .section-footer {
   background: #353535;
+  margin-top: 10px;
 }
 @media screen and (min-width: 992px) {
   .section-footer {
@@ -397,6 +486,7 @@ h2, p, input {
   height: 280px;
   background: white;
   border-radius: 20px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
 }
 @media screen and (min-width: 992px) {
   .card-restaurant {
@@ -434,6 +524,87 @@ h2, p, input {
 .card-restaurant__lien--texte {
   color: rgba(56, 56, 56, 0.662745098);
   margin: 0px 0px 8px 15px;
+}
+
+.section-menu {
+  display: flex;
+  flex-direction: column;
+  background: #F6F6F6;
+  margin-top: -35px;
+  padding-top: 30px;
+  border-radius: 30px 30px 0px 0px;
+  position: relative;
+}
+.section-menu__titre-resto {
+  font-family: shrikhand;
+  margin: 0px 0px 10px 20px;
+}
+
+.section-entrees {
+  animation: deffilement 1500ms both 0ms;
+}
+
+.section-plats {
+  animation: deffilement 1500ms both 1500ms;
+}
+
+.section-desserts {
+  animation: deffilement 1500ms both 3000ms;
+}
+
+.section-entrees, .section-plats, .section-desserts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.section-entrees_titre, .section-plats_titre, .section-desserts_titre {
+  color: rgba(56, 56, 56, 0.662745098);
+  margin-right: 280px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.section-entrees_card, .section-plats_card, .section-desserts_card {
+  width: 360px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+}
+.section-entrees_card:hover, .section-plats_card:hover, .section-desserts_card:hover {
+  animation: card-active 300ms forwards;
+}
+.section-entrees_card:hover .section-entrees_card--icon, .section-entrees_card:hover .section-plats_card--icon, .section-entrees_card:hover .section-desserts_card--icon, .section-plats_card:hover .section-entrees_card--icon, .section-plats_card:hover .section-plats_card--icon, .section-plats_card:hover .section-desserts_card--icon, .section-desserts_card:hover .section-entrees_card--icon, .section-desserts_card:hover .section-plats_card--icon, .section-desserts_card:hover .section-desserts_card--icon {
+  width: 25%;
+}
+.section-entrees_card:hover .fa-check-circle, .section-plats_card:hover .fa-check-circle, .section-desserts_card:hover .fa-check-circle {
+  animation: rotatation 1000ms forwards;
+}
+.section-entrees_card .fa-check-circle, .section-plats_card .fa-check-circle, .section-desserts_card .fa-check-circle {
+  font-size: 40px;
+  color: #fff;
+}
+.section-entrees_card--texte h4, .section-plats_card--texte h4, .section-desserts_card--texte h4 {
+  margin: 10px 0px 10px 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.section-entrees_card--texte p, .section-plats_card--texte p, .section-desserts_card--texte p {
+  margin: 10px 0px 10px 20px;
+  color: rgba(56, 56, 56, 0.662745098);
+}
+.section-entrees_card--prix, .section-plats_card--prix, .section-desserts_card--prix {
+  margin: 45px 0px 0px 130px;
+  font-weight: bold;
+}
+.section-entrees_card--icon, .section-plats_card--icon, .section-desserts_card--icon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  background: #99E2D0;
 }
 
 /*# sourceMappingURL=style.css.map */

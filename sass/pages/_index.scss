@@ -148,11 +148,11 @@ main{
 .card-restaurant{
     display: flex;
     flex-direction: column;
-    
     width: 350px;
     height: 280px;
     background: $blanc;
     border-radius: 20px;
+    @include box-shadow;
 
     @include desktop-version{
         background: $gris_claire;

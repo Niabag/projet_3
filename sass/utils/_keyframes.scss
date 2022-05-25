@@ -25,7 +25,7 @@
 
 /*Bouton header*/
 
-@keyframes explorer {
+@keyframes active-btn {
     0% {
         box-shadow: inset -8px -10px 48px 10px rgba(146, 86, 220, 0.356),0px 3px 5px 0px rgba(0, 0, 0, 0.281);
     }
@@ -100,5 +100,34 @@
     100% {
         opacity: 0;
         transform: translateX(-283%);
+    }
+}
+
+/*card menu*/
+
+@keyframes card-active{
+    0% {
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+    }
+    100% {
+        box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
+    } 
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes deffilement {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

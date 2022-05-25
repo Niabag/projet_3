@@ -5,13 +5,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/fa537a8fec.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/public/css/normalize.css">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="public/css/normalize.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <title>Ohmyfood</title>
 </head>
 
 
 <body>
+    <!-- Header -->
+    <header class="section-header">
+        <div class="section-header__block">
+            <a class="section-header__block--fleche" href="index.html"><i class=" fa-solid fa-arrow-left"></i></a>
+            <h1 class="section-header__block--logo">ohmyfood</h1>
+        </div>
+        <img class="section-header__img" src="public/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+            alt="Restaurant">
+    </header>
+
+    <!--Main-->
+    <!-- Menu -->
+    <main>
+        <section class="section-menu">
+            <h2 class="section-menu__titre-resto">À la française</h2>
+            <button class="section-menu__btn" type="button">
+                <i class="section-menu__btn--coeur fa-stack-1x far fa-heart"></i>
+                <i class="section-menu__btn--coeur fa-stack-1x fas fa-heart"></i>
+            </button>
+            <form action="#" method="post">
+
+                <!--Entrées-->
+                <section class="section-entrees">
+                    <h3 class="section-entrees_titre">Entrées</h3>
+                    <!--Card 1-->
+                    <div class="section-entrees_card">
+                        <div class="section-entrees_card--icon">
+                            <i class="fas fa-check-circle"></i>  
+                        </div>
+                        <div class="section-entrees_card--texte">
+                            <h4>Fricassée d'escargot</h4>
+                            <p class="">Au pimet d'espelette</p>
+                        </div>
+                        <div class="section-entrees_card--prix">
+                            <p>25€</p>
+                        </div>
+                    </div>
+                    <!--Card 2-->
+                    <div class="section-entrees_card">
+                        <div class="section-entrees_card--icon">
+                            <i class="fas fa-check-circle"></i>  
+                        </div>
+                        <div class="section-entrees_card--texte">
+                            <h4>Fricassée d'escargot</h4>
+                            <p class="">Au pimet d'espelette</p>
+                        </div>
+                        <div class="section-entrees_card--prix">
+                            <p>25€</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Plats-->
+                <section class="section-plats">
+                    <h3 class="section-plats_titre">Entrées</h3>
+                    <!--Card 1-->
+                    <div class="section-plats_card">
+                        <div class="section-plats_card--icon">
+                            <i class="fas fa-check-circle"></i>  
+                        </div>
+                        <div class="section-plats_card--texte">
+                            <h4>Fricassée d'escargot</h4>
+                            <p class="">Au pimet d'espelette</p>
+                        </div>
+                        <div class="section-plats_card--prix">
+                            <p>25€</p>
+                        </div>
+                    </div>
+                    <!--Card 2-->
+                    <div class="section-plats_card">
+                        <div class="section-plats_card--icon">
+                            <i class="fas fa-check-circle"></i>  
+                        </div>
+                        <div class="section-plats_card--texte">
+                            <h4>Fricassée d'escargot</h4>
+                            <p class="">Au pimet d'espelette</p>
+                        </div>
+                        <div class="section-plats_card--prix">
+                            <p>25€</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Dessert-->
+                <section class="section-desserts">
+                    <h3 class="section-desserts_titre">Entrées</h3>
+                    <!--Card 1-->
+                    <div class="section-desserts_card">
+                        <div class="section-desserts_card--icon">
+                            <i class="fas fa-check-circle"></i>  
+                        </div>
+                        <div class="section-desserts_card--texte">
+                            <h4>Fricassée d'escargot</h4>
+                            <p class="">Au pimet d'espelette</p>
+                        </div>
+                        <div class="section-desserts_card--prix">
+                            <p>25€</p>
+                        </div>
+                    </div>
+                    <!--Card 2-->
+                    <div class="section-desserts_card">
+                        <div class="section-desserts_card--icon">
+                            <i class="fas fa-check-circle"></i>  
+                        </div>
+                        <div class="section-desserts_card--texte">
+                            <h4>Fricassée d'escargot</h4>
+                            <p class="">Au pimet d'espelette</p>
+                        </div>
+                        <div class="section-desserts_card--prix">
+                            <p>25€</p>
+                        </div>
+                    </div>
+                    
+                    <input class="btn" type="submit" value="Commander">
+                </section>
+                
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="section-footer">
+        <h2 class="section-footer__logo">ohmyfood</h2>
+
+        <ul class="footer-ul">
+            <li class="footer-ul__li">
+                <i class=" footer-ul__li--icon1 icon fas fa-utensils"></i>
+                <a class="footer-ul__li--a" href="#">Proposer un restaurant</a>
+            </li>
+            <li class="footer-ul__li">
+                <i class=" footer-ul__li--icon2 icon fas fa-hands-helping"></i>
+                <a class="footer-ul__li--a" href="#">Devenir partenaire</a>
+            </li>
+            <li class="footer-ul__li">
+                <a class="footer-ul__li--a" href="#">Mentions légales</a>
+            </li>
+            <li class="footer-ul__li">
+                <a class="footer-ul__li--a" href="mailto:contact@ohmyfood.com">Contact</a>
+            </li>
+        </ul>
+    </footer>
 </body>
 
 </html>

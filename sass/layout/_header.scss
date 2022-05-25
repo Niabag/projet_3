@@ -1,32 +1,33 @@
-.logo{
+/*Header Index*/
+.logo {
     text-align: center;
     font-size: 30px;
     padding: 0px;
 
-    @include desktop-version{
+    @include desktop-version {
         font-size: 40px;
     }
 }
 
-.block-loc{
-    box-shadow: 0px 90px 9px -87px rgba(0,0,0,0.18) inset;
+.block-loc {
+    box-shadow: 0px 90px 9px -87px rgba(0, 0, 0, 0.18) inset;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $gris_fonce;
 
-    &__icon{
+    &__icon {
         margin-right: 15px;
     }
 }
 
-.block-btn-loc{ 
+.block-btn-loc {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $gris_claire;
 
-    &__h2{
+    &__titre {
         text-align: center;
         margin: 0px;
         font-size: 23px;
@@ -34,9 +35,37 @@
         font-weight: bold;
     }
 
-    &__text-prensentation{
+    &__text-prensentation {
         color: $gris-texte;
         text-align: center;
         padding: 0px 30px 5px 30px;
     }
+}
+
+/*Header menu*/
+.section-header {
+    display: flex;
+    flex-direction: column;
+
+    &__block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        &--fleche {
+            color: $noir;
+            font-size: 20px;
+        }
+
+        &--logo {
+            font-size: 30px;
+            padding: 0px 60px 0px 60px;
+        }
+
+        &--img{
+            z-index: -1;
+        }
+    }
+
 }
