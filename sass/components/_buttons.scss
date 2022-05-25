@@ -1,42 +1,90 @@
-
+/*Index*/
 /*Bouton header*/
-.block-btn{
-        &__btn{
+.block-btn {
+    &__btn {
         margin: 20px 0px 50px 0px;
         background-color: $segondaire;
         color: $blanc;
         border-radius: 25px;
         padding: 16px 20px 16px 20px;
-        box-shadow: inset -8px -10px 48px 10px rgba(147,86,220,0.60), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);;
+        box-shadow: inset -8px -10px 48px 10px rgba(147, 86, 220, 0.60), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+        ;
         border: 3px $gris_fonce;
-        
-        &:hover{
+
+        &:hover {
             cursor: pointer;
-            animation: explorer 300ms forwards;
+            animation: active-btn 300ms forwards;
         }
     }
 }
 
 /*Bouton coeur*/
 
-.card-restaurant{
+.card-restaurant {
 
-    &__btn{
+    &__btn {
         position: absolute;
         margin: 220px 140px 0px 280px;
         font-size: 30px;
         border: none;
         background-color: $blanc;
         cursor: pointer;
-        
+
         .fas {
             opacity: 0;
 
-            &:hover{
-                animation: coeur-plein 500ms forwards;                        
+            &:hover {
+                animation: coeur-plein 500ms forwards;
                 color: $primaire;
             }
-           
+
         }
+    }
+}
+
+/*Menu*/
+/*Bouton coeur*/
+.section-menu {
+    &__btn {
+        width: 30px;
+        position: absolute;
+        font-size: 30px;
+        border: none;
+        background-color: $gris_claire;
+        cursor: pointer;
+        margin-left: 300px;
+
+        &--coeur {
+            font-size: 25px;
+        }
+
+        .fas {
+            opacity: 0;
+
+            &:hover {
+                animation: coeur-plein 500ms forwards;
+                color: $primaire;
+            }
+
+        }
+    }
+}
+
+
+/*Bouton Commander*/
+.btn {
+    width: 180px;
+    margin: 20px 0px 50px 0px;
+    background-color: $segondaire;
+    color: $blanc;
+    border-radius: 25px;
+    padding: 16px 20px 16px 20px;
+    box-shadow: inset -8px -10px 48px 10px rgba(147, 86, 220, 0.60), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+    ;
+    border: 3px $gris_fonce;
+
+    &:hover {
+        cursor: pointer;
+        animation: active-btn 300ms forwards;
     }
 }
