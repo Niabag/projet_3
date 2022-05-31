@@ -131,3 +131,25 @@
         opacity: 1;
     }
 }
+
+@keyframes checked {
+    0% {
+        width: 0px;
+    }
+
+    25%{
+        width: 50px;
+    }
+
+    50%{
+        width: 100px;
+    }
+
+    75%{
+        width: 150px;
+    }
+
+    100% {
+        width: 180px;
+    }
+}

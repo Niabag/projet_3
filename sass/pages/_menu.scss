@@ -16,18 +16,59 @@
 .section-entrees {
     animation: deffilement 1500ms both 0ms;
 }
+
 .section-plats {
     animation: deffilement 1500ms both 1500ms;
 }
+
 .section-desserts {
     animation: deffilement 1500ms both 3000ms;
 }
 
-.section-entrees, .section-plats,.section-desserts {
+
+.section-desktop {
+
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
+
+    @include desktop-version {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+.section-menu {
+
+    &__centre-btn {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    @include desktop-version {
+        display: flex;
+        align-items: center;
+        width: 2000px;
+    }
+}
+
+
+
+.section-entrees,
+.section-plats,
+.section-desserts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
+
+    @include desktop-version {
+        margin: 50px;
+    }
+
 
     &_titre {
         color: $gris-texte;
@@ -36,52 +77,81 @@
         font-size: 16px;
     }
 
-    &_card {               
-        width: 360px;
+    &_card {
+        width: 350px;
+        height: 80px;
         border-radius: 20px;
         display: flex;
         flex-direction: row;
         align-items: center;
         background: $blanc;
         @include box-shadow;
+        cursor: pointer;
 
-        &:hover {
-            animation: card-active 300ms forwards;
-            .section-entrees_card--icon,.section-plats_card--icon,.section-desserts_card--icon {
-                width: 25%;    
+        &--texte {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+
+            & h4 {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin: 10px 0px 10px 20px;
+                font-weight: bold;
+                font-size: 17px;
+
             }
-            .fa-check-circle {
-                animation: rotatation 1000ms forwards;
+            
+            & p {
+                width: 100%;
+                margin: 10px 0px 10px 20px;
+                color: $gris-texte;
+                font-size: 12px;
             }
+        }
+
+        &--prix {
+            display: flex;
+            justify-content: end;
+            width: 10%;
+            font-weight: bold;
+            margin-right: 10px;
+
+            & p {
+                padding-top: 25px;
+            }
+        }
+
+        &--icon {
+            width: 0px;
+            background: $tertiaire;
+            padding: 20px 0px 20px 0px;
+            border-radius: 0px 20px 20px 0px;
         }
 
         .fa-check-circle {
-            font-size: 40px;
-            color: #fff; 
-        }
-
-        &--texte h4{
-            margin: 10px 0px 10px 20px;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        &--texte p{
-            margin: 10px 0px 10px 20px;
-            color: $gris-texte;
-        }
-        
-        &--prix {
-            margin: 45px 0px 0px 130px;
-            font-weight: bold;
-        }
-
-        &--icon{
-            display: none;
-            align-items: center;
+            display: flex;
             justify-content: center;
-            margin-left: 10px;
-            background: $tertiaire;
+            font-size: 0px;
+            color: #fff;
         }
+
+        &:hover {
+            animation: card-active 300ms forwards;
+
+            .section-entrees_card--icon,
+            .section-plats_card--icon,
+            .section-desserts_card--icon
+             {
+                animation: checked 300ms forwards;
+            }
+
+            .fa-check-circle {
+                animation: rotation 1000ms forwards;
+                font-size: 40px;
+            }
+
+        }
+
     }
 }

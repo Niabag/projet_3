@@ -115,6 +115,23 @@
     opacity: 1;
   }
 }
+@keyframes checked {
+  0% {
+    width: 0px;
+  }
+  25% {
+    width: 50px;
+  }
+  50% {
+    width: 100px;
+  }
+  75% {
+    width: 150px;
+  }
+  100% {
+    width: 180px;
+  }
+}
 h1 {
   font-family: shrikhand;
 }
@@ -253,6 +270,12 @@ h2, p, input {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 992px) {
+  .section-header__img {
+    width: auto;
+    height: 600px;
+  }
+}
 .section-header__block {
   display: flex;
   flex-direction: row;
@@ -266,9 +289,6 @@ h2, p, input {
 .section-header__block--logo {
   font-size: 30px;
   padding: 0px 60px 0px 60px;
-}
-.section-header__block--img {
-  z-index: -1;
 }
 
 .block-loc__recherche {
@@ -552,59 +572,144 @@ h2, p, input {
   animation: deffilement 1500ms both 3000ms;
 }
 
-.section-entrees, .section-plats, .section-desserts {
+.section-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 992px) {
+  .section-desktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+.section-menu__centre-btn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  .section-menu {
+    display: flex;
+    align-items: center;
+    width: 2000px;
+  }
+}
+
+.section-entrees,
+.section-plats,
+.section-desserts {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-.section-entrees_titre, .section-plats_titre, .section-desserts_titre {
+@media screen and (min-width: 992px) {
+  .section-entrees,
+.section-plats,
+.section-desserts {
+    margin: 50px;
+  }
+}
+.section-entrees_titre,
+.section-plats_titre,
+.section-desserts_titre {
   color: rgba(56, 56, 56, 0.662745098);
   margin-right: 280px;
   text-transform: uppercase;
   font-size: 16px;
 }
-.section-entrees_card, .section-plats_card, .section-desserts_card {
-  width: 360px;
+.section-entrees_card,
+.section-plats_card,
+.section-desserts_card {
+  width: 350px;
+  height: 80px;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   background: white;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+  cursor: pointer;
 }
-.section-entrees_card:hover, .section-plats_card:hover, .section-desserts_card:hover {
-  animation: card-active 300ms forwards;
+.section-entrees_card--texte,
+.section-plats_card--texte,
+.section-desserts_card--texte {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.section-entrees_card:hover .section-entrees_card--icon, .section-entrees_card:hover .section-plats_card--icon, .section-entrees_card:hover .section-desserts_card--icon, .section-plats_card:hover .section-entrees_card--icon, .section-plats_card:hover .section-plats_card--icon, .section-plats_card:hover .section-desserts_card--icon, .section-desserts_card:hover .section-entrees_card--icon, .section-desserts_card:hover .section-plats_card--icon, .section-desserts_card:hover .section-desserts_card--icon {
-  width: 25%;
-}
-.section-entrees_card:hover .fa-check-circle, .section-plats_card:hover .fa-check-circle, .section-desserts_card:hover .fa-check-circle {
-  animation: rotatation 1000ms forwards;
-}
-.section-entrees_card .fa-check-circle, .section-plats_card .fa-check-circle, .section-desserts_card .fa-check-circle {
-  font-size: 40px;
-  color: #fff;
-}
-.section-entrees_card--texte h4, .section-plats_card--texte h4, .section-desserts_card--texte h4 {
+.section-entrees_card--texte h4,
+.section-plats_card--texte h4,
+.section-desserts_card--texte h4 {
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin: 10px 0px 10px 20px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 17px;
 }
-.section-entrees_card--texte p, .section-plats_card--texte p, .section-desserts_card--texte p {
+.section-entrees_card--texte p,
+.section-plats_card--texte p,
+.section-desserts_card--texte p {
+  width: 100%;
   margin: 10px 0px 10px 20px;
   color: rgba(56, 56, 56, 0.662745098);
+  font-size: 12px;
 }
-.section-entrees_card--prix, .section-plats_card--prix, .section-desserts_card--prix {
-  margin: 45px 0px 0px 130px;
+.section-entrees_card--prix,
+.section-plats_card--prix,
+.section-desserts_card--prix {
+  display: flex;
+  justify-content: end;
+  width: 10%;
   font-weight: bold;
+  margin-right: 10px;
 }
-.section-entrees_card--icon, .section-plats_card--icon, .section-desserts_card--icon {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px;
+.section-entrees_card--prix p,
+.section-plats_card--prix p,
+.section-desserts_card--prix p {
+  padding-top: 25px;
+}
+.section-entrees_card--icon,
+.section-plats_card--icon,
+.section-desserts_card--icon {
+  width: 0px;
   background: #99E2D0;
+  padding: 20px 0px 20px 0px;
+  border-radius: 0px 20px 20px 0px;
+}
+.section-entrees_card .fa-check-circle,
+.section-plats_card .fa-check-circle,
+.section-desserts_card .fa-check-circle {
+  display: flex;
+  justify-content: center;
+  font-size: 0px;
+  color: #fff;
+}
+.section-entrees_card:hover,
+.section-plats_card:hover,
+.section-desserts_card:hover {
+  animation: card-active 300ms forwards;
+}
+.section-entrees_card:hover .section-entrees_card--icon,
+.section-entrees_card:hover .section-plats_card--icon,
+.section-entrees_card:hover .section-desserts_card--icon,
+.section-plats_card:hover .section-entrees_card--icon,
+.section-plats_card:hover .section-plats_card--icon,
+.section-plats_card:hover .section-desserts_card--icon,
+.section-desserts_card:hover .section-entrees_card--icon,
+.section-desserts_card:hover .section-plats_card--icon,
+.section-desserts_card:hover .section-desserts_card--icon {
+  animation: checked 300ms forwards;
+}
+.section-entrees_card:hover .fa-check-circle,
+.section-plats_card:hover .fa-check-circle,
+.section-desserts_card:hover .fa-check-circle {
+  animation: rotation 1000ms forwards;
+  font-size: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
