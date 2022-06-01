@@ -103,7 +103,7 @@ main{
     &:hover{
         animation: active_card 300ms forwards;
         .block-fonctionnement__icon{
-            animation: active_icon 1000ms forwards;
+            animation: active_icon 0ms forwards;
         }
     }
 }

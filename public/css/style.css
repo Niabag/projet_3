@@ -91,14 +91,6 @@
   }
 }
 /*card menu*/
-@keyframes card-active {
-  0% {
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
-  }
-  100% {
-    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
-  }
-}
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -461,7 +453,7 @@ h2, p, input {
   animation: active_card 300ms forwards;
 }
 .block-fonctionnement__card:hover .block-fonctionnement__icon {
-  animation: active_icon 1000ms forwards;
+  animation: active_icon 0ms forwards;
 }
 
 /* Partie Restaurants*/
@@ -560,6 +552,7 @@ h2, p, input {
   margin: 0px 0px 10px 20px;
 }
 
+/*Animation deffilement*/
 .section-entrees {
   animation: deffilement 1500ms both 0ms;
 }
@@ -569,9 +562,53 @@ h2, p, input {
 }
 
 .section-desserts {
-  animation: deffilement 1500ms both 3000ms;
+  animation: deffilement 1500ms both 3500ms;
 }
 
+/*card Entrees*/
+.section-entrees_card1 {
+  animation: deffilement 1500ms both 0ms;
+}
+
+.section-entrees_card2 {
+  animation: deffilement 1500ms both 500ms;
+}
+
+.section-entrees_card3 {
+  animation: deffilement 1500ms both 1000ms;
+}
+
+.section-entrees_card4 {
+  animation: deffilement 3000ms both 1500ms;
+}
+
+/*card plats*/
+.section-plats_card1 {
+  animation: deffilement 1500ms both 2000ms;
+}
+
+.section-plats_card2 {
+  animation: deffilement 1500ms both 2500ms;
+}
+
+.section-plats_card3 {
+  animation: deffilement 3000ms both 3000ms;
+}
+
+/*card desserts*/
+.section-desserts_card1 {
+  animation: deffilement 1500ms both 4000ms;
+}
+
+.section-desserts_card2 {
+  animation: deffilement 1500ms both 4500ms;
+}
+
+.section-desserts_card3 {
+  animation: deffilement 3000ms both 5000ms;
+}
+
+/*Section card menu*/
 .section-desktop {
   display: flex;
   flex-direction: column;
@@ -604,7 +641,7 @@ h2, p, input {
 .section-desserts {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 @media screen and (min-width: 992px) {
@@ -617,14 +654,21 @@ h2, p, input {
 .section-entrees_titre,
 .section-plats_titre,
 .section-desserts_titre {
+  display: flex;
   color: rgba(56, 56, 56, 0.662745098);
-  margin-right: 280px;
+  margin-top: 50px;
   text-transform: uppercase;
   font-size: 16px;
 }
-.section-entrees_card,
-.section-plats_card,
-.section-desserts_card {
+.section-entrees_card1, .section-entrees_card2, .section-entrees_card3, .section-entrees_card4,
+.section-plats_card1,
+.section-plats_card2,
+.section-plats_card3,
+.section-plats_card4,
+.section-desserts_card1,
+.section-desserts_card2,
+.section-desserts_card3,
+.section-desserts_card4 {
   width: 350px;
   height: 80px;
   border-radius: 20px;
@@ -635,79 +679,241 @@ h2, p, input {
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
   cursor: pointer;
 }
-.section-entrees_card--texte,
-.section-plats_card--texte,
-.section-desserts_card--texte {
+.section-entrees_card1--texte, .section-entrees_card2--texte, .section-entrees_card3--texte, .section-entrees_card4--texte,
+.section-plats_card1--texte,
+.section-plats_card2--texte,
+.section-plats_card3--texte,
+.section-plats_card4--texte,
+.section-desserts_card1--texte,
+.section-desserts_card2--texte,
+.section-desserts_card3--texte,
+.section-desserts_card4--texte {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
 }
-.section-entrees_card--texte h4,
-.section-plats_card--texte h4,
-.section-desserts_card--texte h4 {
+.section-entrees_card1--texte h4, .section-entrees_card2--texte h4, .section-entrees_card3--texte h4, .section-entrees_card4--texte h4,
+.section-plats_card1--texte h4,
+.section-plats_card2--texte h4,
+.section-plats_card3--texte h4,
+.section-plats_card4--texte h4,
+.section-desserts_card1--texte h4,
+.section-desserts_card2--texte h4,
+.section-desserts_card3--texte h4,
+.section-desserts_card4--texte h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 10px 0px 10px 20px;
   font-weight: bold;
   font-size: 17px;
 }
-.section-entrees_card--texte p,
-.section-plats_card--texte p,
-.section-desserts_card--texte p {
+.section-entrees_card1--texte p, .section-entrees_card2--texte p, .section-entrees_card3--texte p, .section-entrees_card4--texte p,
+.section-plats_card1--texte p,
+.section-plats_card2--texte p,
+.section-plats_card3--texte p,
+.section-plats_card4--texte p,
+.section-desserts_card1--texte p,
+.section-desserts_card2--texte p,
+.section-desserts_card3--texte p,
+.section-desserts_card4--texte p {
   width: 100%;
   margin: 10px 0px 10px 20px;
   color: rgba(56, 56, 56, 0.662745098);
   font-size: 12px;
 }
-.section-entrees_card--prix,
-.section-plats_card--prix,
-.section-desserts_card--prix {
+.section-entrees_card1--prix, .section-entrees_card2--prix, .section-entrees_card3--prix, .section-entrees_card4--prix,
+.section-plats_card1--prix,
+.section-plats_card2--prix,
+.section-plats_card3--prix,
+.section-plats_card4--prix,
+.section-desserts_card1--prix,
+.section-desserts_card2--prix,
+.section-desserts_card3--prix,
+.section-desserts_card4--prix {
   display: flex;
   justify-content: end;
   width: 10%;
   font-weight: bold;
   margin-right: 10px;
 }
-.section-entrees_card--prix p,
-.section-plats_card--prix p,
-.section-desserts_card--prix p {
+.section-entrees_card1--prix p, .section-entrees_card2--prix p, .section-entrees_card3--prix p, .section-entrees_card4--prix p,
+.section-plats_card1--prix p,
+.section-plats_card2--prix p,
+.section-plats_card3--prix p,
+.section-plats_card4--prix p,
+.section-desserts_card1--prix p,
+.section-desserts_card2--prix p,
+.section-desserts_card3--prix p,
+.section-desserts_card4--prix p {
   padding-top: 25px;
 }
-.section-entrees_card--icon,
-.section-plats_card--icon,
-.section-desserts_card--icon {
+.section-entrees_card1--icon, .section-entrees_card2--icon, .section-entrees_card3--icon, .section-entrees_card4--icon,
+.section-plats_card1--icon,
+.section-plats_card2--icon,
+.section-plats_card3--icon,
+.section-plats_card4--icon,
+.section-desserts_card1--icon,
+.section-desserts_card2--icon,
+.section-desserts_card3--icon,
+.section-desserts_card4--icon {
   width: 0px;
   background: #99E2D0;
   padding: 20px 0px 20px 0px;
   border-radius: 0px 20px 20px 0px;
 }
-.section-entrees_card .fa-check-circle,
-.section-plats_card .fa-check-circle,
-.section-desserts_card .fa-check-circle {
+.section-entrees_card1 .fa-check-circle, .section-entrees_card2 .fa-check-circle, .section-entrees_card3 .fa-check-circle, .section-entrees_card4 .fa-check-circle,
+.section-plats_card1 .fa-check-circle,
+.section-plats_card2 .fa-check-circle,
+.section-plats_card3 .fa-check-circle,
+.section-plats_card4 .fa-check-circle,
+.section-desserts_card1 .fa-check-circle,
+.section-desserts_card2 .fa-check-circle,
+.section-desserts_card3 .fa-check-circle,
+.section-desserts_card4 .fa-check-circle {
   display: flex;
   justify-content: center;
   font-size: 0px;
   color: #fff;
 }
-.section-entrees_card:hover,
-.section-plats_card:hover,
-.section-desserts_card:hover {
-  animation: card-active 300ms forwards;
+.section-entrees_card1:hover, .section-entrees_card2:hover, .section-entrees_card3:hover, .section-entrees_card4:hover,
+.section-plats_card1:hover,
+.section-plats_card2:hover,
+.section-plats_card3:hover,
+.section-plats_card4:hover,
+.section-desserts_card1:hover,
+.section-desserts_card2:hover,
+.section-desserts_card3:hover,
+.section-desserts_card4:hover {
+  box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
 }
-.section-entrees_card:hover .section-entrees_card--icon,
-.section-entrees_card:hover .section-plats_card--icon,
-.section-entrees_card:hover .section-desserts_card--icon,
-.section-plats_card:hover .section-entrees_card--icon,
-.section-plats_card:hover .section-plats_card--icon,
-.section-plats_card:hover .section-desserts_card--icon,
-.section-desserts_card:hover .section-entrees_card--icon,
-.section-desserts_card:hover .section-plats_card--icon,
-.section-desserts_card:hover .section-desserts_card--icon {
+.section-entrees_card1:hover .section-entrees_card1--icon,
+.section-entrees_card1:hover .section-plats_card1--icon,
+.section-entrees_card1:hover .section-desserts_card1--icon,
+.section-entrees_card1:hover .section-entrees_card2--icon,
+.section-entrees_card1:hover .section-plats_card2--icon,
+.section-entrees_card1:hover .section-desserts_card2--icon,
+.section-entrees_card1:hover .section-entrees_card3--icon,
+.section-entrees_card1:hover .section-plats_card3--icon,
+.section-entrees_card1:hover .section-desserts_card3--icon,
+.section-entrees_card1:hover .section-entrees_card4--icon, .section-entrees_card2:hover .section-entrees_card1--icon,
+.section-entrees_card2:hover .section-plats_card1--icon,
+.section-entrees_card2:hover .section-desserts_card1--icon,
+.section-entrees_card2:hover .section-entrees_card2--icon,
+.section-entrees_card2:hover .section-plats_card2--icon,
+.section-entrees_card2:hover .section-desserts_card2--icon,
+.section-entrees_card2:hover .section-entrees_card3--icon,
+.section-entrees_card2:hover .section-plats_card3--icon,
+.section-entrees_card2:hover .section-desserts_card3--icon,
+.section-entrees_card2:hover .section-entrees_card4--icon, .section-entrees_card3:hover .section-entrees_card1--icon,
+.section-entrees_card3:hover .section-plats_card1--icon,
+.section-entrees_card3:hover .section-desserts_card1--icon,
+.section-entrees_card3:hover .section-entrees_card2--icon,
+.section-entrees_card3:hover .section-plats_card2--icon,
+.section-entrees_card3:hover .section-desserts_card2--icon,
+.section-entrees_card3:hover .section-entrees_card3--icon,
+.section-entrees_card3:hover .section-plats_card3--icon,
+.section-entrees_card3:hover .section-desserts_card3--icon,
+.section-entrees_card3:hover .section-entrees_card4--icon, .section-entrees_card4:hover .section-entrees_card1--icon,
+.section-entrees_card4:hover .section-plats_card1--icon,
+.section-entrees_card4:hover .section-desserts_card1--icon,
+.section-entrees_card4:hover .section-entrees_card2--icon,
+.section-entrees_card4:hover .section-plats_card2--icon,
+.section-entrees_card4:hover .section-desserts_card2--icon,
+.section-entrees_card4:hover .section-entrees_card3--icon,
+.section-entrees_card4:hover .section-plats_card3--icon,
+.section-entrees_card4:hover .section-desserts_card3--icon,
+.section-entrees_card4:hover .section-entrees_card4--icon,
+.section-plats_card1:hover .section-entrees_card1--icon,
+.section-plats_card1:hover .section-plats_card1--icon,
+.section-plats_card1:hover .section-desserts_card1--icon,
+.section-plats_card1:hover .section-entrees_card2--icon,
+.section-plats_card1:hover .section-plats_card2--icon,
+.section-plats_card1:hover .section-desserts_card2--icon,
+.section-plats_card1:hover .section-entrees_card3--icon,
+.section-plats_card1:hover .section-plats_card3--icon,
+.section-plats_card1:hover .section-desserts_card3--icon,
+.section-plats_card1:hover .section-entrees_card4--icon,
+.section-plats_card2:hover .section-entrees_card1--icon,
+.section-plats_card2:hover .section-plats_card1--icon,
+.section-plats_card2:hover .section-desserts_card1--icon,
+.section-plats_card2:hover .section-entrees_card2--icon,
+.section-plats_card2:hover .section-plats_card2--icon,
+.section-plats_card2:hover .section-desserts_card2--icon,
+.section-plats_card2:hover .section-entrees_card3--icon,
+.section-plats_card2:hover .section-plats_card3--icon,
+.section-plats_card2:hover .section-desserts_card3--icon,
+.section-plats_card2:hover .section-entrees_card4--icon,
+.section-plats_card3:hover .section-entrees_card1--icon,
+.section-plats_card3:hover .section-plats_card1--icon,
+.section-plats_card3:hover .section-desserts_card1--icon,
+.section-plats_card3:hover .section-entrees_card2--icon,
+.section-plats_card3:hover .section-plats_card2--icon,
+.section-plats_card3:hover .section-desserts_card2--icon,
+.section-plats_card3:hover .section-entrees_card3--icon,
+.section-plats_card3:hover .section-plats_card3--icon,
+.section-plats_card3:hover .section-desserts_card3--icon,
+.section-plats_card3:hover .section-entrees_card4--icon,
+.section-plats_card4:hover .section-entrees_card1--icon,
+.section-plats_card4:hover .section-plats_card1--icon,
+.section-plats_card4:hover .section-desserts_card1--icon,
+.section-plats_card4:hover .section-entrees_card2--icon,
+.section-plats_card4:hover .section-plats_card2--icon,
+.section-plats_card4:hover .section-desserts_card2--icon,
+.section-plats_card4:hover .section-entrees_card3--icon,
+.section-plats_card4:hover .section-plats_card3--icon,
+.section-plats_card4:hover .section-desserts_card3--icon,
+.section-plats_card4:hover .section-entrees_card4--icon,
+.section-desserts_card1:hover .section-entrees_card1--icon,
+.section-desserts_card1:hover .section-plats_card1--icon,
+.section-desserts_card1:hover .section-desserts_card1--icon,
+.section-desserts_card1:hover .section-entrees_card2--icon,
+.section-desserts_card1:hover .section-plats_card2--icon,
+.section-desserts_card1:hover .section-desserts_card2--icon,
+.section-desserts_card1:hover .section-entrees_card3--icon,
+.section-desserts_card1:hover .section-plats_card3--icon,
+.section-desserts_card1:hover .section-desserts_card3--icon,
+.section-desserts_card1:hover .section-entrees_card4--icon,
+.section-desserts_card2:hover .section-entrees_card1--icon,
+.section-desserts_card2:hover .section-plats_card1--icon,
+.section-desserts_card2:hover .section-desserts_card1--icon,
+.section-desserts_card2:hover .section-entrees_card2--icon,
+.section-desserts_card2:hover .section-plats_card2--icon,
+.section-desserts_card2:hover .section-desserts_card2--icon,
+.section-desserts_card2:hover .section-entrees_card3--icon,
+.section-desserts_card2:hover .section-plats_card3--icon,
+.section-desserts_card2:hover .section-desserts_card3--icon,
+.section-desserts_card2:hover .section-entrees_card4--icon,
+.section-desserts_card3:hover .section-entrees_card1--icon,
+.section-desserts_card3:hover .section-plats_card1--icon,
+.section-desserts_card3:hover .section-desserts_card1--icon,
+.section-desserts_card3:hover .section-entrees_card2--icon,
+.section-desserts_card3:hover .section-plats_card2--icon,
+.section-desserts_card3:hover .section-desserts_card2--icon,
+.section-desserts_card3:hover .section-entrees_card3--icon,
+.section-desserts_card3:hover .section-plats_card3--icon,
+.section-desserts_card3:hover .section-desserts_card3--icon,
+.section-desserts_card3:hover .section-entrees_card4--icon,
+.section-desserts_card4:hover .section-entrees_card1--icon,
+.section-desserts_card4:hover .section-plats_card1--icon,
+.section-desserts_card4:hover .section-desserts_card1--icon,
+.section-desserts_card4:hover .section-entrees_card2--icon,
+.section-desserts_card4:hover .section-plats_card2--icon,
+.section-desserts_card4:hover .section-desserts_card2--icon,
+.section-desserts_card4:hover .section-entrees_card3--icon,
+.section-desserts_card4:hover .section-plats_card3--icon,
+.section-desserts_card4:hover .section-desserts_card3--icon,
+.section-desserts_card4:hover .section-entrees_card4--icon {
   animation: checked 300ms forwards;
 }
-.section-entrees_card:hover .fa-check-circle,
-.section-plats_card:hover .fa-check-circle,
-.section-desserts_card:hover .fa-check-circle {
+.section-entrees_card1:hover .fa-check-circle, .section-entrees_card2:hover .fa-check-circle, .section-entrees_card3:hover .fa-check-circle, .section-entrees_card4:hover .fa-check-circle,
+.section-plats_card1:hover .fa-check-circle,
+.section-plats_card2:hover .fa-check-circle,
+.section-plats_card3:hover .fa-check-circle,
+.section-plats_card4:hover .fa-check-circle,
+.section-desserts_card1:hover .fa-check-circle,
+.section-desserts_card2:hover .fa-check-circle,
+.section-desserts_card3:hover .fa-check-circle,
+.section-desserts_card4:hover .fa-check-circle {
   animation: rotation 1000ms forwards;
   font-size: 40px;
 }

@@ -12,20 +12,63 @@
         margin: 0px 0px 10px 20px;
     }
 }
-
-.section-entrees {
+ /*Animation deffilement*/
+.section-entrees{
     animation: deffilement 1500ms both 0ms;
 }
+
 
 .section-plats {
     animation: deffilement 1500ms both 1500ms;
 }
 
 .section-desserts {
-    animation: deffilement 1500ms both 3000ms;
+    animation: deffilement 1500ms both 3500ms;
+}
+
+/*card Entrees*/
+.section-entrees_card1{
+    animation: deffilement 1500ms both 0ms;
+}
+
+.section-entrees_card2{
+    animation: deffilement 1500ms both 500ms;
+}
+.section-entrees_card3{
+    animation: deffilement 1500ms both 1000ms;
+}
+
+.section-entrees_card4{
+    animation: deffilement 3000ms both 1500ms;
+}
+
+/*card plats*/
+.section-plats_card1{
+    animation: deffilement 1500ms both 2000ms;
+}
+
+.section-plats_card2{
+    animation: deffilement 1500ms both 2500ms;
+}
+.section-plats_card3{
+    animation: deffilement 3000ms both 3000ms;
+}
+
+/*card desserts*/
+.section-desserts_card1{
+    animation: deffilement 1500ms both 4000ms;
+}
+
+.section-desserts_card2{
+    animation: deffilement 1500ms both 4500ms;
+}
+.section-desserts_card3{
+    animation: deffilement 3000ms both 5000ms;
 }
 
 
+
+/*Section card menu*/
 .section-desktop {
 
     display: flex;
@@ -62,7 +105,7 @@
 .section-desserts {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 
     @include desktop-version {
@@ -71,13 +114,14 @@
 
 
     &_titre {
+        display: flex;
         color: $gris-texte;
-        margin-right: 280px;
+        margin-top: 50px ;
         text-transform: uppercase;
         font-size: 16px;
     }
 
-    &_card {
+    &_card1,&_card2,&_card3,&_card4 {
         width: 350px;
         height: 80px;
         border-radius: 20px;
@@ -137,11 +181,19 @@
         }
 
         &:hover {
-            animation: card-active 300ms forwards;
+            @include box-shadow_active;
 
-            .section-entrees_card--icon,
-            .section-plats_card--icon,
-            .section-desserts_card--icon
+            .section-entrees_card1--icon,
+            .section-plats_card1--icon,
+            .section-desserts_card1--icon,
+            .section-entrees_card2--icon,
+            .section-plats_card2--icon,
+            .section-desserts_card2--icon,
+            .section-entrees_card3--icon,
+            .section-plats_card3--icon,
+            .section-desserts_card3--icon,
+            .section-entrees_card4--icon
+            
              {
                 animation: checked 300ms forwards;
             }
