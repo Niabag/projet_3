@@ -716,10 +716,11 @@ h2, p, input {
 .section-desserts_card2--texte p,
 .section-desserts_card3--texte p,
 .section-desserts_card4--texte p {
-  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin: 10px 0px 10px 20px;
-  color: rgba(56, 56, 56, 0.662745098);
   font-size: 12px;
+  color: rgba(56, 56, 56, 0.662745098);
 }
 .section-entrees_card1--prix, .section-entrees_card2--prix, .section-entrees_card3--prix, .section-entrees_card4--prix,
 .section-plats_card1--prix,
