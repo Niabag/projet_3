@@ -22,10 +22,10 @@
 /*Bouton header*/
 @keyframes active-btn {
   0% {
-    box-shadow: inset -8px -10px 48px 10px rgba(146, 86, 220, 0.356), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
+    box-shadow: inset -8px -10px 48px 10px rgb(216, 103, 192), 0px 3px 5px 0px rgba(0, 0, 0, 0.281);
   }
   100% {
-    box-shadow: inset -8px -10px 48px 10px rgba(146, 86, 220, 0.452), 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
+    box-shadow: inset -8px -10px 48px 10px rgb(216, 103, 192), 0px 10px 5px 0px rgba(0, 0, 0, 0.281);
   }
 }
 /*Fonctionnement*/
@@ -254,7 +254,7 @@ h2, h3, h4, h5, h6, p, input, span {
   font-weight: bold;
 }
 .block-btn-loc__text-prensentation {
-  color: rgba(15, 15, 15, 0.8470588235);
+  color: rgb(64, 64, 64);
   text-align: center;
   padding: 0px 30px 5px 30px;
 }
@@ -431,18 +431,21 @@ h2, h3, h4, h5, h6, p, input, span {
   }
 }
 .block-fonctionnement__icon {
-  color: rgba(15, 15, 15, 0.8470588235);
+  color: rgb(126, 126, 126);
   margin-right: 15px;
 }
 .block-fonctionnement__num {
   display: flex;
   justify-content: center;
-  width: 20px;
+  align-items: center;
+  width: 25px;
+  height: 25px;
   position: absolute;
   margin-right: 280px;
   background: #9356dc;
   border-radius: 25px;
   color: white;
+  font-size: 12px;
 }
 .block-fonctionnement__texte-composez {
   margin-right: 20px;
@@ -548,7 +551,7 @@ h2, h3, h4, h5, h6, p, input, span {
   margin: 10px 0px 10px 15px;
 }
 .card-restaurant__lien--texte {
-  color: rgba(15, 15, 15, 0.8470588235);
+  color: rgb(64, 64, 64);
   margin: 0px 0px 8px 15px;
 }
 
@@ -669,7 +672,7 @@ h2, h3, h4, h5, h6, p, input, span {
 .section-plats_titre,
 .section-desserts_titre {
   display: flex;
-  color: rgba(15, 15, 15, 0.8470588235);
+  color: rgb(64, 64, 64);
   margin-top: 50px;
   text-transform: uppercase;
   font-size: 16px;
@@ -745,7 +748,7 @@ h2, h3, h4, h5, h6, p, input, span {
   overflow: hidden;
   margin: 10px 0px 10px 20px;
   font-size: 14px;
-  color: rgba(15, 15, 15, 0.8470588235);
+  color: rgb(64, 64, 64);
 }
 .section-entrees_card1--prix, .section-entrees_card2--prix, .section-entrees_card3--prix, .section-entrees_card4--prix,
 .section-plats_card1--prix,
