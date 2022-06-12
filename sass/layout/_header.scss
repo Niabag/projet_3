@@ -51,6 +51,7 @@
         @include desktop-version{
             width: auto;
             height: 600px;
+            object-fit: cover;
         } 
     }
 
