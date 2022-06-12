@@ -34,6 +34,10 @@
     margin: 0px;
     padding: 20px 0px 20px 20px;
     
+    @include desktop-version{
+        display: flex; 
+        flex-direction: row;
+    }
 
     &__li{
         padding-top: 10px;
@@ -41,6 +45,10 @@
             text-decoration: none;
             color: $blanc;
             font-size: 20px;
+
+            @include desktop-version{
+               margin-right: 15px;
+            }
         }
 
         &--icon1{
