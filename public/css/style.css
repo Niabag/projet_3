@@ -303,6 +303,7 @@ h2, h3, h4, h5, h6, p, input, span {
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 180px;
   }
 }
 @media screen and (min-width: 768px) {
